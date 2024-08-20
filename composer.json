@@ -1,17 +1,27 @@
 {
-    "name": "primeinduss/common",
-    "autoload": {
-        "psr-4": {
-            "Primeinduss\\Common\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Dharani",
-            "email": "dharanitharan@indusspay.com"
-        }
-    ],
-    "require": {
-        "defuse/php-encryption": "^2.4"
+  "name": "primeinduss/common",
+  "version": "1.0.0",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "repositories": {
+    "github": {
+      "type": "composer",
+      "url": "https://github.com/raja-ip/indpay-sdk"
     }
+  },
+  "autoload": {
+    "psr-4": {
+      "Primeinduss\\Common\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Dharani",
+      "email": "dharanitharan@indusspay.com"
+    }
+  ],
+  "require": {
+    "defuse/php-encryption": "^2.4"
+  }
 }
