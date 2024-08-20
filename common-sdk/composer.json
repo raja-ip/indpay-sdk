@@ -1,0 +1,21 @@
+{
+  "name": "primeinduss/demo",
+  "description": "Common SDK for PrimeInduss",
+  "type": "library",
+  "version": "1.0.0",
+  "autoload": {
+    "psr-4": {
+      "Primeinduss\\CommonSdk\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Dharanitharan",
+      "email": "dharanitharan@indusspay.com"
+    }
+  ],
+  "require": {
+    "defuse/php-encryption": "^2.4"
+  },
+  "license": "MIT"
+}
