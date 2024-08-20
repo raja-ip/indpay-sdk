@@ -2,11 +2,12 @@
 
 namespace primeinduss\IndusspayClient;
 
+require_once 'vendor/autoload.php';
+
 use Defuse\Crypto\Crypto;
 use Defuse\Crypto\Exception\CryptoException;
 use Defuse\Crypto\Key;
 
-require_once 'vendor/autoload.php';
 
 class Utils
 {
