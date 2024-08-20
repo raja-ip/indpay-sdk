@@ -1,11 +1,20 @@
 <?php
 
-require_once "../utils/ApiUtils.php";
-require_once "../response/CommonResponse.php";
-require_once "./IndusspayException.php";
-require_once "../utils/utils.php";
+namespace primeinduss\IndusspayClient;
+
+use Exception;
+use primeinduss\IndusspayClient\ApiUtils;
+use primeinduss\IndusspayClient\IndusspayException;
+use primeinduss\IndusspayClient\CommonResponse;
+use primeinduss\IndusspayClient\Utils;
 
 class ApiClient {
+    private static $utils;
+
+    public function __construct() {
+        self::$utils = new Utils();
+    }
+
     public function get($path, $data) {
         $response = ApiUtils::getRequest($path);
         return $this->processResponse($response);
@@ -32,7 +41,7 @@ class ApiClient {
         }
 
         try {
-            return toObject($response->data, 'CommonResponse');
+            return self::$utils->toObject($response->data, CommonResponse::class);
         } catch (Exception $e) {
             throw new IndusspayException($e->getMessage());
         }

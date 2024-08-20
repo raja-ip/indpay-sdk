@@ -1,5 +1,9 @@
 <?php
 
+namespace primeinduss\IndusspayClient;
+
+use Exception;
+
 class IndusspayException extends Exception {
     public function __construct($messageOrCause = null) {
         if (is_string($messageOrCause)) {

@@ -1,5 +1,7 @@
 <?php
 
+namespace primeinduss\IndusspayClient;
+
 class CommonResponse {
     private $status;
     private $message;

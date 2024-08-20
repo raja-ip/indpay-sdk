@@ -1,12 +1,16 @@
 <?php
 
-require_once 'Credentials.php';
+namespace primeinduss\IndusspayClient;
+
+use primeinduss\IndusspayClient\Credentials;
 
 class BodyInterceptor {
-    private $auth;
+    private static $auth;
+    private static $credentials;
 
     public function __construct($clientId, $secretKey) {
-        $this->auth = createCredentials($clientId, $secretKey);
+        self::$credentials = new Credentials();
+        self::$auth = self::$credentials->createCredentials($clientId, $secretKey);
     }
 
     public function intercept($url, $options = []) {

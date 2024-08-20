@@ -1,8 +1,9 @@
 <?php
 
-require_once "./ApiClient.php";
-require_once "../types/PathConstants.php";
-require_once "../response/CommonResponse.php";
+namespace primeinduss\IndusspayClient;
+
+use primeinduss\IndusspayClient\ApiClient;
+use primeinduss\IndusspayClient\PathConstants;
 
 class PayoutsClient {
     private $apiClient;

@@ -1,5 +1,7 @@
 <?php
 
+namespace primeinduss\IndusspayClient;
+
 enum Methods {
     case GET;
     case POST;

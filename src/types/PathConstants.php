@@ -1,5 +1,7 @@
 <?php
 
+namespace primeinduss\IndusspayClient;
+
 class PathConstants {
     const SCHEME = "https";
 

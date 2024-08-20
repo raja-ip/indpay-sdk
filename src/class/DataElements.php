@@ -1,5 +1,7 @@
 <?php
 
+namespace primeinduss\IndusspayClient;
+
 class DataElements {
     public static $clientId;
     public static $secretKey;

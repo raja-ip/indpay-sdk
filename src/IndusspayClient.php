@@ -1,8 +1,14 @@
 <?php
 
+namespace primeinduss\IndusspayClient;
+
 require_once "./class/DataElements.php";
 require_once "./class/CollectsClient.php";
 require_once "./class/PayoutsClient.php";
+
+use primeinduss\IndusspayClient\DataElements;
+use primeinduss\IndusspayClient\CollectsClient;
+use primeinduss\IndusspayClient\PayoutsClient;
 
 class IndusspayClient {
     public $collects;

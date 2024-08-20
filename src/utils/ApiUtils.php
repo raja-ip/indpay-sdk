@@ -1,14 +1,23 @@
 <?php 
 
-require_once "../types/PathConstants.php";
-require_once "../class/IndusspayException.php";
-require_once "../utils/utils.php";
+namespace primeinduss\IndusspayClient;
+
+
+use primeinduss\IndusspayClient\Utils;
+use primeinduss\IndusspayClient\PathConstants;
+use primeinduss\IndusspayClient\IndusspayException;
 
 class ApiUtils extends DataElements {
     private static $interceptor;
+    private static $utils;
+    private static $auth;
+    private static $credentials;
 
     public function __construct() {
         self::$interceptor = new BodyInterceptor(self::$clientId, self::$secretKey);
+        self::$utils = new Utils(self::$signatureKey);
+        self::$credentials = new Credentials();
+        self::$auth = self::$credentials->createCredentials(self::$clientId, self::$secretKey);
     }
 
     public static function postRequest($path, $obj) {
@@ -48,7 +57,7 @@ class ApiUtils extends DataElements {
             throw new IndusspayException("Signature key is not set");
         }
 
-        return $req != null ? generateChecksum($req, self::$signatureKey) : "";
+        return $req != null ? self::$utils->generateChecksum($req) : "";
     }
 
     private static function createRequest($method, $url, $requestBody){
@@ -58,7 +67,7 @@ class ApiUtils extends DataElements {
 
         $headers = [
             "Content-Type: " . PathConstants::MEDIA_TYPE_JSON,
-            PathConstants::AUTH_HEADER_KEY . ": " . createCredentials(self::$clientId, self::$secretKey),
+            PathConstants::AUTH_HEADER_KEY . ": " . self::$auth,
         ];
 
         return [
