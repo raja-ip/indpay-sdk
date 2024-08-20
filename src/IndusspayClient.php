@@ -1,10 +1,10 @@
 <?php
 
-namespace primeinduss\IndusspayClient;
+namespace Primeinduss\Common;
 
-use primeinduss\IndusspayClient\DataElements;
-use primeinduss\IndusspayClient\CollectsClient;
-use primeinduss\IndusspayClient\PayoutsClient;
+use Primeinduss\Common\DataElements;
+use Primeinduss\Common\CollectsClient;
+use Primeinduss\Common\PayoutsClient;
 
 class IndusspayClient {
     public $collects;
